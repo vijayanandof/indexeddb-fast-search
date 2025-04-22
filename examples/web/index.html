@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB Fast Search - Web Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1976d2;
+            --primary-light: #42a5f5;
+            --primary-dark: #1565c0;
+            --secondary-color: #f5f5f5;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --error-color: #d32f2f;
+            --success-color: #388e3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: #fafafa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        button.secondary {
+            background-color: var(--secondary-color);
+            color: var(--text-primary);
+        }
+
+        button.secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .success {
+            color: var(--success-color);
+        }
+
+        .error {
+            color: var(--error-color);
+        }
+
+        .book-list {
+            margin-top: 20px;
+        }
+
+        .book-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .book-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .book-item p {
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .book-item .genres {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .book-item .genre {
+            background-color: var(--primary-light);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IndexedDB Fast Search - Web Example</h1>
+
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" placeholder="Enter ISBN">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Enter book title">
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" id="author" placeholder="Enter author name">
+        </div>
+
+        <div class="form-group">
+            <label for="year">Published Year</label>
+            <input type="number" id="year" placeholder="Enter publication year">
+        </div>
+
+        <div class="form-group">
+            <label for="genres">Genres</label>
+            <select id="genres" multiple>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="mystery">Mystery</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="romance">Romance</option>
+                <option value="thriller">Thriller</option>
+                <option value="biography">Biography</option>
+                <option value="history">History</option>
+                <option value="tech">Technology</option>
+                <option value="programming">Programming</option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button id="addBook">Add Book</button>
+            <button id="findJaneDoe" class="secondary">Find Jane Doe's Books</button>
+            <button id="findFiction" class="secondary">Find Fiction Books</button>
+            <button id="clearBooks" class="secondary">Clear Books Store</button>
+            <button id="runDemo" class="secondary">Run Full Demo</button>
+        </div>
+
+        <h2>Output / Logs:</h2>
+        <pre id="output">Click buttons to run operations...</pre>
+
+        <div id="bookList" class="book-list"></div>
+    </div>
+
+    <!-- Load the UMD build of the library -->
+    <script src="../../dist/index.umd.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 

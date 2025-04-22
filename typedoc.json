@@ -1,0 +1,19 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "theme": "default",
+  "name": "IndexedDB Fast Search",
+  "readme": "README.md",
+  "includeVersion": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "hideGenerator": true,
+  "plugin": ["typedoc-plugin-markdown"],
+  "disableSources": true,
+  "markdown": {
+    "hideSources": true,
+    "sourceRepo": "https://github.com/yourusername/indexeddb-fast-search",
+    "sourceBranch": "main"
+  }
+} 
