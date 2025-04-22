@@ -164,4 +164,4 @@ Please ensure your code adheres to the existing style and that all tests pass in
 
 ## License
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details (you'll need to create this file). 
+This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details. 
