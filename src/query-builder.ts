@@ -5,7 +5,6 @@ export interface QueryOptions {
   offset?: number;
   direction?: 'next' | 'prev' | 'nextunique' | 'prevunique';
 }
-
 export class QueryBuilder<T> {
   private db: FastIndexedDB;
   private storeName: string;
