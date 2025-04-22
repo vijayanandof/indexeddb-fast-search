@@ -1,3 +1,4 @@
+export type { IndexSchema } from './db';
 import { QueryBuilder } from './query-builder';
 export interface StoreSchema {
     name: string;

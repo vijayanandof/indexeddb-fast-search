@@ -1,6 +1,6 @@
 {
   "name": "indexeddb-fast-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight, Promise-based, and fast IndexedDB wrapper focused on efficient searching and ease of use",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/indexeddb-fast-search.git"
+    "url": "git+https://github.com/vijayanandof/indexeddb-fast-search.git"
   },
   "keywords": [
     "indexeddb",
@@ -46,9 +46,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yourusername/indexeddb-fast-search/issues"
+    "url": "https://github.com/vijayanandof/indexeddb-fast-search/issues"
   },
-  "homepage": "https://github.com/yourusername/indexeddb-fast-search#readme",
+  "homepage": "https://github.com/vijayanandof/indexeddb-fast-search#readme",
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",

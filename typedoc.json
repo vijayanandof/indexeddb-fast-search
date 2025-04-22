@@ -13,7 +13,7 @@
   "disableSources": true,
   "markdown": {
     "hideSources": true,
-    "sourceRepo": "https://github.com/yourusername/indexeddb-fast-search",
+    "sourceRepo": "https://github.com/vijayanandof/indexeddb-fast-search",
     "sourceBranch": "main"
   }
 } 

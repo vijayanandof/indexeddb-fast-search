@@ -1,6 +1,6 @@
 # IndexedDB Fast Search ✨
 
-[![Node.js CI](https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/actions/workflows/ci.yml) <!-- Replace with your actual badge URL -->
+[![Node.js CI](https://github.com/vijanandof/indexeddb-fast-search/actions/workflows/ci.yml/badge.svg)](https://github.com/vijayanandof/indexeddb-fast-search/actions/workflows/ci.yml) <!-- Replace with your actual badge URL -->
 [![npm version](https://badge.fury.io/js/indexeddb-fast-search.svg)](https://badge.fury.io/js/indexeddb-fast-search) <!-- Replace with your actual npm package name if different -->
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 

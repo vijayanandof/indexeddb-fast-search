@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745313856380" clover="3.2.0">
-  <project timestamp="1745313856380" name="All files">
+<coverage generated="1745316519369" clover="3.2.0">
+  <project timestamp="1745316519369" name="All files">
     <metrics statements="641" coveredstatements="567" conditionals="78" coveredconditionals="54" methods="32" coveredmethods="27" elements="751" coveredelements="648" complexity="0" loc="641" ncloc="641" packages="1" files="2" classes="2"/>
-    <file name="core.ts" path="/Users/vijayanandayyasamy/Pet-Projects/queryIn/indexeddb-fast-search/src/core.ts">
+    <file name="core.ts" path="/Users/vijayanandayyasamy/Pet-Projects/indexeddb-fast-search/src/core.ts">
       <metrics statements="383" coveredstatements="354" conditionals="43" coveredconditionals="32" methods="20" coveredmethods="19"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -388,7 +388,7 @@
       <line num="382" count="1" type="stmt"/>
       <line num="383" count="1" type="stmt"/>
     </file>
-    <file name="db.ts" path="/Users/vijayanandayyasamy/Pet-Projects/queryIn/indexeddb-fast-search/src/db.ts">
+    <file name="db.ts" path="/Users/vijayanandayyasamy/Pet-Projects/indexeddb-fast-search/src/db.ts">
       <metrics statements="258" coveredstatements="213" conditionals="35" coveredconditionals="22" methods="12" coveredmethods="8"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>

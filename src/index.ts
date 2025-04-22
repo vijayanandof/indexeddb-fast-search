@@ -1,6 +1,5 @@
 // Re-export core functionality and necessary types
-export { FastIndexedDB } from './core';
-export type { StoreSchema, IndexSchema } from './db';
+export type { IndexSchema } from './db';
 
 // Optional: Decide if QueryBuilder is still needed/compatible or remove
 // export { QueryBuilder } from './query-builder';
